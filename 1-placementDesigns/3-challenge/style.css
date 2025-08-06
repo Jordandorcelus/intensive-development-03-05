@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto auto auto;
+    border: 5px solid rgb(213, 212, 212);
+    gap: 20px;
+    width: 90%;
+    max-width: 1400px;
+    max-height: 100vh;
+    margin: 0 auto 10px 20px;
+    padding: 10px;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 2;
+}
+
+.aqua {
+    grid-row: 1 / 4;
+    position: sticky;
+    top: 0;
+    background-color: rgb(171, 212, 199);
+    padding: 20px;
+    height: fit-content;
+}
+
+.lorem {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.veggies {
+    grid-row: 3 / 5;
+    grid-column: 2;
+}
+
+.aqua > p {
+    text-align: center;
+    margin: 40px;
+}
+
+
+@media (max-width: 1200px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .aqua {
+        position: static;
+        order: -1;
+        margin: 0 0 20px 20px;
+    }
+
+    .lorem, .veggies {
+        margin: 0 0 20px 0;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+}
